@@ -18,7 +18,9 @@ import java.time.LocalDateTime;
 public class Dispositivo {
 
     @Id
-    private String mac;
+    private long id;
+    @DBRef
+    private Cliente cliente;
     private String nome;
     private String ip;
     private Integer memoria;
@@ -30,8 +32,11 @@ public class Dispositivo {
     private String latitude;
     private String longitude;
     private String brokerId;
+    private Endereco endereco;
     private String enderecoCompleto;
-    private Configuracao configuracao;
+    private Float sensibilidadeVibracao;
+    private Integer tempoAtividade;
+    private String corVibracao;
     @DBRef
     private Operacao operacao;
     @DBRef

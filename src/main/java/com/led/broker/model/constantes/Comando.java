@@ -2,7 +2,6 @@ package com.led.broker.model.constantes;
 
 public enum Comando {
 
-    ACEITO("Comando aceito pelo dispositivo"),
     ENVIADO("Comando enviado"),
     ENVIAR("Comando pendente"),
     SISTEMA("Comando enviado pelo sistema"),
@@ -15,9 +14,10 @@ public enum Comando {
     CONCLUIDO("Teste concluido"),
     TIMER_CONCLUIDO("Timer finalizado para %S"),
     TIMER_CRIADO("Timer criado para %S"),
-    UPDATE("Comando de atualização de firmware enviado para %S"),
-    FIRMWARE("Firmware atualizado para dispositivo %S"),
-    PARAMETRO("Parametrizando cores");
+    TIMER_CANCELADO("Timer cancelado para %S"),
+    BOTAO_ACIONADO("Botão pressionado"),
+    OCORRENCIA("Evento de ocorrência acionado"),
+    VIBRACAO("Vibração detectada");
 
     private String value;
 

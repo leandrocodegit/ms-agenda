@@ -4,8 +4,10 @@ import com.led.broker.model.constantes.Efeito;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -16,19 +18,18 @@ import java.util.UUID;
 @Document(collection = "cores")
 public class Cor {
 
-
     @Id
     private UUID id;
+    @DBRef
+    private Cliente cliente;
     private String nome;
-    private Efeito efeito;
-    private int[] cor;
-    private String primaria;
-    private String secundaria;
-    private int[] correcao;
-    private int velocidade;
     private long time;
+    private int quantidadePinos;
     private boolean rapida;
+    private Boolean vibracao;
+    private boolean exclusiva;
+    private int velocidade;
+    private List<Parametro> parametros;
     @Transient
     private boolean responder;
-
 }
