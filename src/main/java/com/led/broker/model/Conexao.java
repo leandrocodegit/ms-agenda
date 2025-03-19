@@ -40,5 +40,7 @@ public class Conexao {
     private Integer snr;
     private Integer rssi;
     private Boolean autoJoin = Boolean.FALSE;
+    private String latitude;
+    private String longitude;
 
 }

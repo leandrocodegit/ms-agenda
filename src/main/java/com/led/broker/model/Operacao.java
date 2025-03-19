@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -17,11 +18,13 @@ import java.time.LocalDateTime;
 public class Operacao {
 
     @Id
-    private String mac;
+    private String id;
     private ModoOperacao modoOperacao;
     @DBRef
     private Agenda agenda;
     @DBRef
     private Cor corTemporizador;
+    @DBRef
+    private Cor corVibracao;
     private LocalDateTime time;
 }

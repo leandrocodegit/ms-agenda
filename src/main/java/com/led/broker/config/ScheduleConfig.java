@@ -21,7 +21,7 @@ public class ScheduleConfig {
     private final ComandoService comandoService;
     private final MqttService mqttService;
 
-    @Scheduled(fixedRate = 2 * 60 * 1000)
+    @Scheduled(fixedRate = 1 * 60 * 1000)
     public void executarTarefaAgendada() {
         List<Agenda> agendas = agendaDeviceService.listaTodosAgendasPrevistaHoje();
         System.out.println("Agendas #: " + agendas.size());
@@ -30,7 +30,7 @@ public class ScheduleConfig {
             agendas.forEach(agenda -> {
                 System.out.println(agenda.getInicio() + " : " + agenda.getTermino());
                 System.out.println("Execução: " + agenda.getExecucao());
-                comandoService.enviarComando(agenda);
+                agendaDeviceService.enviarComando(agenda);
                 agendaDeviceService.atualizarDataExecucao(agenda);
 
             });

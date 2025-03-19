@@ -29,8 +29,6 @@ public class Dispositivo {
     private boolean ativo;
     private boolean permiteComando;
     private Comando comando;
-    private String latitude;
-    private String longitude;
     private String brokerId;
     private Endereco endereco;
     private String enderecoCompleto;
